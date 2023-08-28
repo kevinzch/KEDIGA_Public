@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Digital Garden</title><link>https://kediga.com/</link><description>Recent content on Kevin's Digital Garden</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kediga.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create a Free Personal Blog Using Hugo and GitHub Pages</title><link>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</link><pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>I have had more spare time since I changed my job earlier this year. I have been contemplating ways to share my life and technology experiences while also enhancing my writing skills. Although Wordpress appears to be a quite popular platform for personal blogs, I&amp;rsquo;d rather not deal with ongoing expenses for servers or disruptions caused by irrelevant technical tasks like virtual machine and database configurations.&lt;/p>
+&lt;p>That&amp;rsquo;s why using an open source &lt;a class="link" href="https://en.wikipedia.org/wiki/Static_site_generator" target="_blank" rel="noopener"
+>Static Site Generator&lt;/a> along with a free &lt;a class="link" href="https://en.wikipedia.org/wiki/Web_hosting_service" target="_blank" rel="noopener"
+>web hosting service&lt;/a> seems like the ideal approach for me.
+Here are the tools I used:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+>&lt;strong>Hugo&lt;/strong>&lt;/a>: An open source Static Site Generator written in Go that allows you to create fast and flexible websites such as personal blogs, company homepages, galleries and many more.&lt;/li>
+&lt;li>&lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+>&lt;strong>GitHub Pages&lt;/strong>&lt;/a>: A free web hosting service provided by GitHub that allows you to host your site directly from your GitHub repository.&lt;/li>
+&lt;/ul>
+&lt;p>In the end, I built this site to serve as my personal blog by following the documentations of those tools. I decided to document the entire process as a future reference for myself, and for anyone else, like you, who happens to come across this post by chance.&lt;/p>
+&lt;hr>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>There are 3 other tools that required to be installed besides Hugo: &lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+>Git&lt;/a>, &lt;a class="link" href="https://go.dev/" target="_blank" rel="noopener"
+>Go&lt;/a> and &lt;a class="link" href="https://sass-lang.com/dart-sass/" target="_blank" rel="noopener"
+>Dart Sass&lt;/a>.
+I installed these tools on both my Windows 10 PC and MacBook.&lt;/p>
+&lt;h3 id="windows">Windows&lt;/h3>
+&lt;h4 id="install-hugo">Install Hugo&lt;/h4>
+&lt;p>I installed Chocolatey first since both Hugo and Sass can also be installed through Chocolatey easily.&lt;/p>
+&lt;h5 id="install-chocolatey">Install Chocolatey&lt;/h5>
+&lt;ol>
+&lt;li>
+&lt;p>Open PowerShell as administrator and type:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Get-ExecutionPolicy&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>If it returns &lt;strong>Restricted&lt;/strong>, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">AllSigned&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>or&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Run the following command to install Chocolatey:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span> &lt;span class="n">-Force&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.ServicePointManager&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">SecurityProtocol&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.ServicePointManager&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">SecurityProtocol&lt;/span> &lt;span class="o">-bor&lt;/span> &lt;span class="mf">3072&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nb">iex &lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nb">New-Object&lt;/span> &lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Net&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">WebClient&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="py">DownloadString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;https://community.chocolatey.org/install.ps1&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Wait for the command to complete, then confirm Chocolatey has been installed correctly:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="n">choco&lt;/span> &lt;span class="p">-?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>After installing Chocolatey, install Hugo:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="n">choco&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="nb">hugo-extended&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="install-git">Install Git&lt;/h4>
+&lt;p>Download the standalone installer from &lt;a class="link" href="https://git-scm.com/download/win" target="_blank" rel="noopener"
+>download page&lt;/a> and install it.&lt;/p>
+&lt;h4 id="install-go">Install Go&lt;/h4>
+&lt;p>Follow this &lt;a class="link" href="https://go.dev/doc/install" target="_blank" rel="noopener"
+>documentation&lt;/a> to download and install Go.&lt;/p>
+&lt;h4 id="install-sass">Install Sass&lt;/h4>
+&lt;p>Run following command in PowerShell:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="n">choco&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="n">sass&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="macos">macOS&lt;/h3>
+&lt;p>Install &lt;a class="link" href="https://brew.sh/" target="_blank" rel="noopener"
+>homebrew&lt;/a> whether it is not installed yet.&lt;/p>
+&lt;h4 id="install-hugo-1">Install Hugo&lt;/h4>
+&lt;p>Open Terminal and run following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">brew install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="install-git-1">Install Git&lt;/h4>
+&lt;p>Run following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">brew install git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="install-go-1">Install Go&lt;/h4>
+&lt;p>Follow this &lt;a class="link" href="https://go.dev/doc/install" target="_blank" rel="noopener"
+>documentation&lt;/a> to download and install Go.&lt;/p>
+&lt;h4 id="install-sass-1">Install Sass&lt;/h4>
+&lt;p>Run following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">brew install sass/sass/sass
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="create-a-site">Create a site&lt;/h2>
+&lt;p>Run following commands in PowerShell or Terminal.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create the directory structure in the &lt;em>mysite&lt;/em> directory:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">hugo new site mysite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Change working directory to the root of &lt;em>mysite&lt;/em>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> mysite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Create an empty Git repository in the working directory:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Clone the &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+>Stack&lt;/a> theme to the theme directory, adding it to &lt;em>mysite&lt;/em> as a Git submodule:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Apply theme:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;theme = &amp;#39;hugo-theme-stack&amp;#39;&amp;#34;&lt;/span> &amp;gt;&amp;gt; hugo.toml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Now start Hugo’s development server and open the URL displayed in terminal to have a look at the site we created.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Development server can be stopped by pressing &lt;strong>Ctrl&lt;/strong> + &lt;strong>C&lt;/strong>.&lt;/p>
+&lt;h2 id="add-a-post">Add a post&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Add a new post to &lt;em>mysite&lt;/em>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">hugo new content posts/my-first-post.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A markdown file was created in content/posts directory by Hugo. Open the file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: &amp;#34;My First Post&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date: 2023-07-19T17:51:29+09:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">draft: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add some content to the body of the post and save the file.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: &amp;#34;My First Post&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date: 2023-07-19T17:51:29+09:00
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">draft: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">## Introduction
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Hello!
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">This is my first post.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Start Hugo’s development server again and have a look at the post:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="host-on-github-pages">Host on GitHub Pages&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>A GitHub account is required for hosting site on GitHub Pages. &lt;a class="link" href="https://github.com/signup?source=login" target="_blank" rel="noopener"
+>Sign up an account&lt;/a> if you don&amp;rsquo;t already have one.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a class="link" href="https://github.com/new" target="_blank" rel="noopener"
+>Create a new repository&lt;/a>. A Pro(paid) account is needed to host site from private repository. So create a public repository if you want to host your site free.&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image1.png"
+width="1454"
+height="1472"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image1_hu150cd004d67592019f98a331f238c113_273611_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image1_hu150cd004d67592019f98a331f238c113_273611_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Create a new repository"
+class="gallery-image"
+data-flex-grow="98"
+data-flex-basis="237px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Push local repository of &lt;em>mysite&lt;/em> to GitHub:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">git remote add origin git@github.com:&lt;span class="nv">$GitHubUserName&lt;/span>/&lt;span class="nv">$RepositoryName&lt;/span>.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git branch -M main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Open GitHub repository page. Click on Settings &amp;gt; Pages.&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image2.png"
+width="1782"
+height="910"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image2_hu7c0bd085d6daa384d2e14a9550f9d340_195008_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image2_hu7c0bd085d6daa384d2e14a9550f9d340_195008_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Open Pages"
+class="gallery-image"
+data-flex-grow="195"
+data-flex-basis="469px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change the Source to &lt;strong>GitHub Actions&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image3.png"
+width="688"
+height="532"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image3_hu5c0ea34ed3deb785b6aa8e55d35bb9fa_73418_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image3_hu5c0ea34ed3deb785b6aa8e55d35bb9fa_73418_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Change Source"
+class="gallery-image"
+data-flex-grow="129"
+data-flex-basis="310px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create an empty file in local repository.&lt;/p>
+&lt;p>&lt;code>.github/workflows/hugo.yaml&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Copy and paste the following YAML into the file created in step6. Change the branch name and Hugo version.(If you used the command in step3, the branch name should be &lt;em>main&lt;/em>. And Hugo version can be confirmed by running &lt;code>hugo version&lt;/code> in Terminal. It is better to use the same version in both local and remote repository.)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Sample workflow for building and deploying a Hugo site to GitHub Pages&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">name: Deploy Hugo site to Pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">on:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Runs on pushes targeting the default branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">push:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> branches:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Allows you to run this workflow manually from the Actions tab&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">workflow_dispatch:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">permissions:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">contents: &lt;span class="nb">read&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pages: write
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">id-token: write
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">concurrency:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">group: &lt;span class="s2">&amp;#34;pages&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cancel-in-progress: &lt;span class="nb">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Default to bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">defaults:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">run:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> shell: bash
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">jobs:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Build job&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">build:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> runs-on: ubuntu-latest
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> env:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HUGO_VERSION: 0.115.3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> steps:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Install Hugo CLI
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> run: &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> wget -O &lt;span class="si">${&lt;/span>&lt;span class="p">{ runner.temp &lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="o">}&lt;/span>/hugo.deb https://github.com/gohugoio/hugo/releases/download/v&lt;span class="si">${&lt;/span>&lt;span class="nv">HUGO_VERSION&lt;/span>&lt;span class="si">}&lt;/span>/hugo_extended_&lt;span class="si">${&lt;/span>&lt;span class="nv">HUGO_VERSION&lt;/span>&lt;span class="si">}&lt;/span>_linux-amd64.deb &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo dpkg -i &lt;span class="si">${&lt;/span>&lt;span class="p">{ runner.temp &lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="o">}&lt;/span>/hugo.deb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Install Dart Sass
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> run: sudo snap install dart-sass
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Checkout
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uses: actions/checkout@v3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> with:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> submodules: recursive
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fetch-depth: &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Setup Pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> id: pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uses: actions/configure-pages@v3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Install Node.js dependencies
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> run: &lt;span class="s2">&amp;#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;amp;&amp;amp; npm ci || true&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Build with Hugo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> env:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># For maximum backward compatibility with Hugo modules&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HUGO_ENVIRONMENT: production
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> HUGO_ENV: production
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> run: &lt;span class="p">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> hugo &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --gc &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --minify &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --baseURL &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="p">{ steps.pages.outputs.base_url &lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">}/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Upload artifact
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uses: actions/upload-pages-artifact@v1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> with:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> path: ./public
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Deployment job&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">deploy:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> environment:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name: github-pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> url: &lt;span class="si">${&lt;/span>&lt;span class="p">{ steps.deployment.outputs.page_url &lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> runs-on: ubuntu-latest
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> needs: build
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> steps:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> - name: Deploy to GitHub Pages
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> id: deployment
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> uses: actions/deploy-pages@v2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Commit the change to local repository and push to GitHub.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on Actions from GitHub repository. The orange circle indicates the workflow is running now:&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image4.png"
+width="564"
+height="552"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image4_hue03fd4c50cc7dca48e84877e4aa87c74_53691_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image4_hue03fd4c50cc7dca48e84877e4aa87c74_53691_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Workflow running"
+class="gallery-image"
+data-flex-grow="102"
+data-flex-basis="245px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After the workflow finished, the indicator will change to a green check.&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image5.png"
+width="422"
+height="112"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image5_hucd283aa050decb1fa1835d4ad6009c56_17483_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image5_hucd283aa050decb1fa1835d4ad6009c56_17483_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Workflow finished"
+class="gallery-image"
+data-flex-grow="376"
+data-flex-basis="904px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on the workflow. the url to &lt;em>mysite&lt;/em> will be shown:&lt;/p>
+&lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image6.png"
+width="1212"
+height="376"
+srcset="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image6_hu9dae719f0bb6a394c5d7b11ffb724752_36893_480x0_resize_box_3.png 480w, https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image6_hu9dae719f0bb6a394c5d7b11ffb724752_36893_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Build and deploy"
+class="gallery-image"
+data-flex-grow="322"
+data-flex-basis="773px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on the url to access &lt;em>mysite&lt;/em> that is being hosted by GitHub Pages now. Usually the URL should be in the format https://$GitHubUsername.github.io/$RepositoryName1. However, I have been using a custom domain which is why my URL is different. From now on, whenever a change is made to this GitHub repository, GitHub will rebuild &lt;em>mysite&lt;/em> and deploy the changes.&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>About</title><link>https://kediga.com/about/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/about/</guid><description/></item><item><title>Archives</title><link>https://kediga.com/archives/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/archives/</guid><description/></item><item><title>My first post</title><link>https://kediga.com/posts/my-first-post/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/my-first-post/</guid><description>&lt;p>Hello.
+This is my first post.&lt;/p></description></item><item><title>Search</title><link>https://kediga.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kediga.com/search/</guid><description/></item></channel></rss>
