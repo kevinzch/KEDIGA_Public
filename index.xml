@@ -289,7 +289,7 @@ I installed these tools on both my Windows 10 PC and MacBook.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a class="link" href="https://github.com/new" target="_blank" rel="noopener"
->Create a new repository&lt;/a>. A Pro(paid) account is needed to host site from private repository. So create a public repository if you want to host your site free.&lt;/p>
+>Create a new repository&lt;/a>. Generally, a Pro(paid) account is needed to host site from private repository. Create a public repository if you want to host your site free.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
 &lt;p>&lt;img src="https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/image1.png"
 width="1454"
 height="1472"
@@ -554,7 +554,16 @@ data-flex-basis="773px"
 >&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Click on the url to access &lt;em>mysite&lt;/em> that is being hosted by GitHub Pages now. Usually the URL should be in the format &lt;code>https://$GitHubUsername.github.io/$RepositoryName1&lt;/code>. However, I have been using a custom domain which is why my URL is different. From now on, whenever a change is made to this GitHub repository, GitHub will rebuild &lt;em>mysite&lt;/em> and deploy the changes.&lt;/p>
+&lt;p>Click on the url to access &lt;em>mysite&lt;/em> that is being hosted by GitHub Pages now. Normally, the URL should be in the format &lt;code>https://$GitHubUsername.github.io/$RepositoryName1&lt;/code>. However, I have been using a custom domain which is why my URL is different. From now on, whenever a change is made to this GitHub repository, GitHub will rebuild &lt;em>mysite&lt;/em> and deploy the changes.&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>About</title><link>https://kediga.com/about/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/about/</guid><description/></item><item><title>Archives</title><link>https://kediga.com/archives/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/archives/</guid><description/></item><item><title>My first post</title><link>https://kediga.com/posts/my-first-post/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/my-first-post/</guid><description>&lt;p>Hello.
+&lt;/ol>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>This an indirect way of &lt;a class="link" href="https://kediga.com/posts/deploy-hugo-site-from-private-repository/" target="_blank" rel="noopener"
+>deploying site from private repository&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>About</title><link>https://kediga.com/about/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/about/</guid><description/></item><item><title>Archives</title><link>https://kediga.com/archives/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/archives/</guid><description/></item><item><title>My first post</title><link>https://kediga.com/posts/my-first-post/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/my-first-post/</guid><description>&lt;p>Hello.
 This is my first post.&lt;/p></description></item><item><title>Search</title><link>https://kediga.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kediga.com/search/</guid><description/></item></channel></rss>
