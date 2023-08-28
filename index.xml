@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Digital Garden</title><link>https://kediga.com/</link><description>Recent content on Kevin's Digital Garden</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kediga.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create a Free Personal Blog Using Hugo and GitHub Pages</title><link>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</link><pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Digital Garden</title><link>https://kediga.com/</link><description>Recent content on Kevin's Digital Garden</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kediga.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy Hugo site from private repository</title><link>https://kediga.com/posts/deploy-hugo-site-from-private-repository/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/deploy-hugo-site-from-private-repository/</guid><description>&lt;p>Draft&lt;/p></description></item><item><title>How to Create a Free Personal Blog Using Hugo and GitHub Pages</title><link>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</link><pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/how-to-create-a-personal-blog-using-hugo-and-github-pages/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>I have had more spare time since I changed my job earlier this year. I have been contemplating ways to share my life and technology experiences while also enhancing my writing skills. Although Wordpress appears to be a quite popular platform for personal blogs, I&amp;rsquo;d rather not deal with ongoing expenses for servers or disruptions caused by irrelevant technical tasks like virtual machine and database configurations.&lt;/p>
 &lt;p>That&amp;rsquo;s why using an open source &lt;a class="link" href="https://en.wikipedia.org/wiki/Static_site_generator" target="_blank" rel="noopener"
 >Static Site Generator&lt;/a> along with a free &lt;a class="link" href="https://en.wikipedia.org/wiki/Web_hosting_service" target="_blank" rel="noopener"
@@ -40,15 +40,6 @@ I installed these tools on both my Windows 10 PC and MacBook.&lt;/p>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">AllSigned&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>or&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-PowerShell" data-lang="PowerShell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
