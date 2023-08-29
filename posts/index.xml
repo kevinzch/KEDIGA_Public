@@ -553,8 +553,8 @@ data-flex-basis="773px"
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>This an indirect way of &lt;a class="link" href="https://kediga.com/posts/host-hugo-site-from-private-repository/" target="_blank" rel="noopener"
->hosting Hugo site from private repository&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>This an indirect way of &lt;a class="link" href="https://kediga.com/posts/deploy-hugo-site-from-private-repository/" target="_blank" rel="noopener"
+>deploying site from private repository&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>My first post</title><link>https://kediga.com/posts/my-first-post/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://kediga.com/posts/my-first-post/</guid><description>&lt;p>Hello.
