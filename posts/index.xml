@@ -548,6 +548,7 @@ data-flex-basis="773px"
 &lt;p>Click on the url to access &lt;em>mysite&lt;/em> that is being hosted by GitHub Pages now. Normally, the URL should be in the format &lt;code>https://$GitHubUsername.github.io/$RepositoryName1&lt;/code>. However, I have been using a custom domain which is why my URL is different. From now on, whenever a change is made to this GitHub repository, GitHub will rebuild &lt;em>mysite&lt;/em> and deploy the changes.&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;p>&lt;em>If you have any questions or advice, leave me a comment below and I will try my best to respond!&lt;/em>&lt;/p>
 &lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
