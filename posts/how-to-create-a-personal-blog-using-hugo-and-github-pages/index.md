@@ -193,7 +193,7 @@ Development server can be stopped by pressing **Ctrl** + **C**.
 
 2. [Create a new repository](https://github.com/new). Usually, a Pro(paid) account is needed to host site from private repository. Create a public repository if you want to host your site free.[^1]
 
-    ![Create a new repository](image1.png)
+    ![Create a new repository](image1.webp)
 
 3. Push local repository of *mysite* to GitHub:
 
@@ -205,11 +205,11 @@ Development server can be stopped by pressing **Ctrl** + **C**.
 
 4. Open GitHub repository page. Click on Settings > Pages.
 
-    ![Open Pages](image2.png)
+    ![Open Pages](image2.webp)
 
 5. Change the Source to **GitHub Actions**.
 
-    ![Change Source](image3.png)
+    ![Change Source](image3.webp)
 
 6. Create an empty file in local repository.
 
@@ -302,19 +302,19 @@ Development server can be stopped by pressing **Ctrl** + **C**.
 
 9. Click on Actions from GitHub repository. The orange circle indicates the workflow is running now:
 
-    ![Workflow running](image4.png)
+    ![Workflow running](image4.webp)
 
 10. After the workflow finished, the indicator will change to a green check.
 
-    ![Workflow finished](image5.png)
+    ![Workflow finished](image5.webp)
 
 11. Click on the workflow. the url to *mysite* will be shown:
 
-    ![Build and deploy](image6.png)
+    ![Build and deploy](image6.webp)
 
 12. Click on the url to access *mysite* that is being hosted by GitHub Pages now. Normally, the URL should be in the format `https://$GitHubUsername.github.io/$RepositoryName1`. However, I have been using a custom domain which is why my URL is different. From now on, whenever a change is made to this GitHub repository, GitHub will rebuild *mysite* and deploy the changes.
 
 *If you have any questions or advice, leave me a comment below and I will try my best to respond!*
 
-[^1]: This an indirect way of [hosting Hugo site from private repository](https://kediga.com/posts/host-hugo-site-from-private-repository/).
+[^1]: This an indirect way of [hosting Hugo site from private repository](https://kediga.com/posts/How-to-host-hugo-site-from-private-repository).
 
