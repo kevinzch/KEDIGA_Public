@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram name="ページ1" id="_EMIizQYLtTgglWV36eq">
+        <mxGraphModel dx="1066" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="DXMwEceIR6SdGO6CDUuS-2" value="Private&lt;br&gt;repository" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#000000;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="270" y="100" width="42" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="DXMwEceIR6SdGO6CDUuS-4" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#000000;shape=mxgraph.azure.laptop;pointerEvents=1;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="200" width="66.67" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="DXMwEceIR6SdGO6CDUuS-5" value="Public&lt;br&gt;repository" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#000000;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.repository;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="640" y="100" width="42" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="DXMwEceIR6SdGO6CDUuS-6" value="①Push" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;startWidth=27.058823529411764;endWidth=27.058823529411764;startSize=5.929411764705883;endSize=8.070588235294117;width=16.47058823529412;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="210" as="sourcePoint"/>
+                        <mxPoint x="250" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="DXMwEceIR6SdGO6CDUuS-7" value="③Deloy" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;width=21.176470588235293;endSize=7.729411764705883;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="139.41" as="sourcePoint"/>
+                        <mxPoint x="630" y="139" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;verticalAlign=bottom;fillColor=#000000;shape=mxgraph.gcp2.play_start" vertex="1" parent="1">
+                    <mxGeometry x="420" y="120" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="②Execute" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;width=19.428571428571427;endSize=7.3428571428571425;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="139.71" as="sourcePoint"/>
+                        <mxPoint x="406" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;GitHub Actions workflow&lt;/b&gt;:&lt;br&gt;- Checkout private repository&lt;br&gt;- Setup Hugo&lt;br&gt;- Build site&lt;br&gt;- Deploy to public repository" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="414" y="160" width="176" height="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
