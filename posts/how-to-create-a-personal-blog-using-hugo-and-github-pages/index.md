@@ -128,16 +128,16 @@ Run following commands in PowerShell or Terminal.
     git init
     ```
 
-4. Clone the [Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme to the theme directory, adding it to *mysite* as a Git submodule:
+4. Clone the [DoIt](https://github.com/HEIGE-PCloud/DoIt) theme to the theme directory, adding it to *mysite* as a Git submodule:
 
     ```bash
-    git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+    git submodule add git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt themes/DoIt
     ```
 
 5. Apply theme:
 
     ```bash
-    echo "theme = 'hugo-theme-stack'" >> hugo.toml
+    echo "theme = 'DoIt'" >> hugo.toml
     ```
 
 6. Now start Hugo’s development server and open the URL displayed in terminal to have a look at the site we created.
