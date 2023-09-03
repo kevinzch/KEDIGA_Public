@@ -9,7 +9,7 @@ Usually, in order to utilize GitHub Pages for free hosting my Hugo site, I have 
 
 After some searching, I found out that I can hide my draft posts and publish only the static site to the public repository by using GitHub Actions:
 
-![Solution by using GitHub Actions](Solution.png)
+![Solution by using GitHub Actions](Solution.webp)
 
 ### Prerequisites
 
@@ -21,15 +21,15 @@ After some searching, I found out that I can hide my draft posts and publish onl
 
 1. Click on your GitHub avatar in top-right and open `Settings` page.
 
-    ![Open Settings](OpenSettings.png)
+    ![Open Settings](OpenSettings.webp)
 
 2. Click on `Developer settings`(at the bottom of the page).
 
-    ![Developer settings](Developer-settings.png)
+    ![Developer settings](Developer-settings.webp)
 
 3. Click on `Personal access tokens` -> `Tokens(classic)` -> `Generate new token` -> `Generate new token(classic)`.
 
-    ![Generate new token](Generate-new-token.png)
+    ![Generate new token](Generate-new-token.webp)
 
     {{< admonition note "Use personal token" >}}
 Personal token is required because we need the permission to access to a external repository.
@@ -41,7 +41,7 @@ Personal token is required because we need the permission to access to a externa
     * :white_check_mark: workflow
     * :white_check_mark: write:packages
 
-    ![Select scopes](Select-scopes.png)
+    ![Select scopes](Select-scopes.webp)
 
 6. Click on `Generate toke`.
 
@@ -53,13 +53,13 @@ Personal token is required because we need the permission to access to a externa
 
 2. Click on `Secrets and variables` -> `Actions`
 
-    ![Actions](Actions.png)
+    ![Actions](Actions.webp)
 
 3. Click on `New repository secret`
 
 4. Add name then paste the token to the `Secret` area.
 
-    ![New secret](New-secret.png)
+    ![New secret](New-secret.webp)
 
 5. Click on `Add secret`
 
